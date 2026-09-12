@@ -1,0 +1,19 @@
+{
+  "checkpoint": "outputs/50epoch/checkpoints/best.pt",
+  "split": "validation",
+  "n_cases": 60,
+  "mean_foreground_dice": 0.7050547915227029,
+  "per_class": {
+    "class_1": 0.6085202693939209,
+    "class_2": 0.7460479736328125,
+    "class_3": 0.7605958580970764
+  },
+  "include_background": false,
+  "ckpt_epoch": null,
+  "ckpt_best_val_dice": null,
+  "device": "cuda:0",
+  "torch_version": "2.5.1+cu121",
+  "monai_version": "1.6.0",
+  "dataset": "Hugging Face dataset: MedOtter/brats2023-gli-dataset",
+  "timestamp_utc": "2026-09-08T10:07:15.072766+00:00"
+}

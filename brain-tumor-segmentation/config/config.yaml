@@ -1,0 +1,69 @@
+# Reproducible 3D brain-tumor MRI segmentation workload (PyTorch + MONAI).
+# Adapted to the verified BraTS 2023 GLI 300-subject subset in data/raw/brats2023-gli/
+# (Hugging Face: MedOtter/brats2023-gli-dataset). See data/manifest.json for the
+# exact subject list and per-file paths/sizes.
+#
+# No package is modified or installed by this project; see ../environment.lock.txt.
+
+seed: 42
+device: cuda                 # resolved at runtime; smoke test pins CUDA_VISIBLE_DEVICES=0
+deterministic: true
+
+data:
+  manifest: data/manifest.json          # source of truth (300 subjects, 4 modalities + seg)
+  data_root: data/raw/brats2023-gli      # paths in the manifest are relative to this dir
+  image_key: image
+  label_key: label
+  modalities: [t1n, t1c, t2w, t2f]       # input channel order (4 channels)
+  num_input_channels: 4                  # t1n, t1c, t2w, t2f
+  num_classes: 4                         # 0=background, 1=NCR, 2=ED, 3=ET (verified on disk 0..3)
+  label_remap: {}                        # BraTS2023 GLI labels are already contiguous 0..3
+  spacing: [1.0, 1.0, 1.0]               # volumes are already 1 mm isotropic (240x240x155)
+
+split:
+  strategy: partition                   # monai.data.partition_dataset (deterministic, seed 42)
+  ratios: [0.8, 0.2]                    # train / validation  (240 / 60 from 300)
+  seed: 42
+  shuffle: true
+  dir: data/splits
+
+model:
+  name: unet
+  channels: [16, 32, 64, 128]
+  strides: [1, 2, 2, 2]
+  kernel_size: 3
+  num_res_units: 1
+
+train:
+  epochs: 5
+  batch_size: 2                         # fixed-size patches per batch (batches never break)
+  patch_size: [128, 128, 128]           # fixed 3D patch; different 240x240x155 sizes are fine
+  crops_per_batch: 2                    # positive/negative tumor-aware crops per item
+  crop_pos_neg: [0.7, 0.3]              # tumor-aware: 70% positive / 30% negative
+  optimizer: adamw
+  learning_rate: 1.0e-3
+  weight_decay: 1.0e-5
+  scheduler: cosine
+  loss: dice_ce
+  amp: true                             # mixed precision (fp16) on the Tesla V100
+  clip_grad_norm: 12.0
+  workers: 4
+  log_interval: 20
+  include_background_in_dice: false     # report foreground Dice (classes 1-3)
+
+eval:
+  roi_size: [128, 128, 128]             # sliding-window tile for validation/eval inference
+  sw_batch_size: 2
+  overlap: 0.25
+  workers: 2
+  include_background_in_dice: false     # per-case foreground Dice, then averaged across cases
+
+paths:
+  splits: data/splits
+  checkpoints: outputs/checkpoints
+  metrics: outputs/metrics
+  visualizations: outputs/visualizations
+
+viz:
+  max_slices: 4
+  dpi: 150

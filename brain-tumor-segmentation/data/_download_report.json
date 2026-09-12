@@ -1,0 +1,13 @@
+{
+  "manifest": "data/manifest.json",
+  "subjects_selected": 300,
+  "subjects_complete": 300,
+  "files_expected": 1500,
+  "files_complete": 1500,
+  "skipped_already_valid": 3,
+  "downloaded_now": 1497,
+  "failed": 0,
+  "actual_total_bytes": 3094014357,
+  "expected_total_bytes": 3094014357,
+  "failed_files": []
+}

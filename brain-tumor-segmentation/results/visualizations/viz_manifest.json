@@ -1,0 +1,22 @@
+{
+  "split": "validation",
+  "subjects": [
+    "BraTS-GLI-00343-000",
+    "BraTS-GLI-00242-000",
+    "BraTS-GLI-00186-000",
+    "BraTS-GLI-00046-000",
+    "BraTS-GLI-00267-000"
+  ],
+  "rendered": [
+    "outputs/50epoch/visualizations/subject-BraTS-GLI-00343-000.png",
+    "outputs/50epoch/visualizations/subject-BraTS-GLI-00242-000.png",
+    "outputs/50epoch/visualizations/subject-BraTS-GLI-00186-000.png",
+    "outputs/50epoch/visualizations/subject-BraTS-GLI-00046-000.png",
+    "outputs/50epoch/visualizations/subject-BraTS-GLI-00267-000.png"
+  ],
+  "checkpoint": "outputs/50epoch/checkpoints/best.pt",
+  "device": "cuda:0",
+  "torch_version": "2.5.1+cu121",
+  "monai_version": "1.6.0",
+  "timestamp_utc": "2026-09-08T10:31:18.378698+00:00"
+}
