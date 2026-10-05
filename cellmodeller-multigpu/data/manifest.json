@@ -1,0 +1,54 @@
+{
+  "prepared": "2026-10-05",
+  "raw_sources": [
+    {
+      "original_filename": "stress-one-gpu.jsonl",
+      "package_path": "metrics/stress-one-gpu.jsonl",
+      "sha256": "4bb4ad003885a48c1fbdd48b354a7d1cc22edfa0fa79d9324e1a366eb0f3e776",
+      "modification": "none"
+    },
+    {
+      "original_filename": "stress-two-gpus.jsonl",
+      "package_path": "metrics/stress-two-gpus.jsonl",
+      "sha256": "ca5192ba3c266345ebeec6ee4e5bee04da114299a4964570914898d3275dc7c5",
+      "modification": "none"
+    },
+    {
+      "original_filename": "gpu-telemetry-single.csv",
+      "package_path": "telemetry/single.csv",
+      "sha256": "f1aee58dc851b6fbd51174e1ae117abe40949c13c3ef668051ccae17c662a1f1",
+      "modification": "none"
+    },
+    {
+      "original_filename": "gpu-telemetry_sep15-2026.csv",
+      "package_path": "telemetry/two.csv",
+      "sha256": "a1c123013091a035a1b976e112dc6aacd5fbf8d7e136b63cb1668daa441a8652",
+      "modification": "none"
+    }
+  ],
+  "four_gpu_screenshot_observations": [
+    {
+      "original_filename": "codex-clipboard-af146873-abd0-4a59-8764-5166570870f4.png",
+      "internal_filename": "four-gpu-progress.png",
+      "sha256": "91b1aa0637a77eb704d58c847838ce26b82b715967a152fe3e5e6929f9e2d187",
+      "observation": "Step 360: 9,567 cells; summary elapsed 629.474182 seconds.",
+      "public_package_includes_image": false
+    },
+    {
+      "original_filename": "codex-clipboard-70d804c5-066e-4f9d-b227-93c72e362814.png",
+      "internal_filename": "four-gpu-monitor.png",
+      "sha256": "0172984789464b1ec8cf101885aded424bfd8659d8cb957785dd597a3ea51b4b",
+      "observation": "Four V100 devices; device-wide utilization snapshot, not process-isolated.",
+      "public_package_includes_image": false
+    },
+    {
+      "original_filename": "codex-clipboard-b44dc5a9-ff6f-4887-9505-b803553cb285.png",
+      "internal_filename": "four-gpu-startup.png",
+      "sha256": "e87fb6fdd0f98c440285daafaa42b874eb827e48fd68a074f917018f61cc7e60",
+      "observation": "Four configured 25% shares; target 2,587,976 cells; grid 10,351,904 bins.",
+      "public_package_includes_image": false
+    }
+  ],
+  "historical_commits": "unknown",
+  "four_gpu_completed_population": null
+}

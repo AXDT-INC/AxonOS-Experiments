@@ -1,0 +1,6 @@
+# Environment used ONLY to reanalyze and plot this package on 2026-10-05.
+# This is NOT the historical simulation environment.
+Python = 3.12.3
+matplotlib = 3.11.2
+numpy = 2.5.3
+Analysis uses Python standard library; plots use matplotlib.

@@ -1,0 +1,28 @@
+{
+  "reference_commit_for_future_reproduction": "d4136ebe347fe20bdcf5c37fb0f786fa714f58ee",
+  "historical_run_commit": null,
+  "historical_run_commit_note": "Not recorded in original logs. Reference commit is not an attribution of the recorded measurements.",
+  "platform": 0,
+  "devices": [
+    "0",
+    "0,1"
+  ],
+  "initial_cells": 1,
+  "max_cells": 100000,
+  "max_contacts": 32,
+  "max_sqs": 400000,
+  "species": 4,
+  "seed": 12345,
+  "growth_rate": 2.0,
+  "memory_fraction": 0.5,
+  "report_every": 10,
+  "dt": 0.025,
+  "steps": 10000,
+  "hold_steps": 100,
+  "gpu_memory": "partitioned",
+  "telemetry_approximate_cutoffs": {
+    "single": "2026/09/15 12:06:52.920",
+    "two": "2026/09/14 13:02:53.798"
+  },
+  "telemetry_cutoff_method": "Exclusive cutoff inferred from GPU memory release; beginning is first telemetry sample, not proven simulation start. Device-wide readings, local timezone unknown. Long post-run idle tails excluded."
+}

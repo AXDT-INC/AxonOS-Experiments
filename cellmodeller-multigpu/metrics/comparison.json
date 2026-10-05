@@ -1,0 +1,226 @@
+{
+  "single": {
+    "config": {
+      "event": "start",
+      "config": {
+        "initial_cells": 1,
+        "max_contacts": 32,
+        "species": 4,
+        "seed": 12345,
+        "growth_rate": 2.0,
+        "report_every": 10,
+        "memory_fraction": 0.5,
+        "max_cells": 100000,
+        "max_sqs": 400000
+      },
+      "arguments": {
+        "platform": 0,
+        "devices": "0",
+        "weights": null,
+        "gpu_memory": "partitioned",
+        "max_cells": "100000",
+        "initial_cells": 1,
+        "max_contacts": 32,
+        "max_sqs": null,
+        "species": 4,
+        "seed": 12345,
+        "growth_rate": 2.0,
+        "memory_fraction": 0.5,
+        "report_every": 10,
+        "dt": 0.025,
+        "steps": 10000,
+        "hold_steps": 100,
+        "log": "stress-one-gpu.jsonl"
+      },
+      "devices": [
+        {
+          "name": "Tesla V100-SXM2-32GB",
+          "memory": 34072559616,
+          "driver": "580.173.02"
+        }
+      ],
+      "weights": [
+        1.0
+      ]
+    },
+    "end": {
+      "event": "end",
+      "status": "target_held",
+      "cells": 100000
+    },
+    "final_step": 2454,
+    "reported_interval_seconds": 2577.790583741851,
+    "seconds_per_step_intervals_ending_at_target": 2.9302719490817535,
+    "work_items_sum": {}
+  },
+  "two": {
+    "config": {
+      "event": "start",
+      "config": {
+        "initial_cells": 1,
+        "max_contacts": 32,
+        "species": 4,
+        "seed": 12345,
+        "growth_rate": 2.0,
+        "report_every": 10,
+        "memory_fraction": 0.5,
+        "max_cells": 100000,
+        "max_sqs": 400000
+      },
+      "arguments": {
+        "platform": 0,
+        "devices": "0,1",
+        "weights": null,
+        "gpu_memory": "partitioned",
+        "max_cells": "100000",
+        "initial_cells": 1,
+        "max_contacts": 32,
+        "max_sqs": null,
+        "species": 4,
+        "seed": 12345,
+        "growth_rate": 2.0,
+        "memory_fraction": 0.5,
+        "report_every": 10,
+        "dt": 0.025,
+        "steps": 10000,
+        "hold_steps": 100,
+        "log": "stress-two-gpus.jsonl"
+      },
+      "devices": [
+        {
+          "name": "Tesla V100-SXM2-32GB",
+          "memory": 34072559616,
+          "driver": "580.173.02"
+        },
+        {
+          "name": "Tesla V100-SXM2-32GB",
+          "memory": 34072559616,
+          "driver": "580.173.02"
+        }
+      ],
+      "weights": [
+        0.5,
+        0.5
+      ]
+    },
+    "end": {
+      "event": "end",
+      "status": "target_held",
+      "cells": 100000
+    },
+    "final_step": 2459,
+    "reported_interval_seconds": 24505.43223153893,
+    "seconds_per_step_intervals_ending_at_target": 28.602031811097756,
+    "work_items_sum": {
+      "physics.bin_cells": [
+        42510814,
+        42509662
+      ],
+      "veccleari": [
+        42510814,
+        42509662
+      ],
+      "physics.predict": [
+        338521954,
+        338513569
+      ],
+      "physics.find_plane_contacts": [
+        338521954,
+        338513569
+      ],
+      "physics.find_sphere_contacts": [
+        338521954,
+        338513569
+      ],
+      "physics.find_contacts": [
+        338521954,
+        338513569
+      ],
+      "physics.contact_sum": [
+        338521954,
+        338513569
+      ],
+      "physics.collect_tos": [
+        338521954,
+        338513569
+      ],
+      "physics.build_matrix": [
+        9472356480,
+        9472125024
+      ],
+      "physics.dot": [
+        3073308852,
+        3073229653
+      ],
+      "physics.add_impulse": [
+        296011140,
+        296003907
+      ],
+      "physics.integrate": [
+        42510814,
+        42509662
+      ],
+      "cell_area_kern": [
+        42510814,
+        42509662
+      ],
+      "cell_vol_kern": [
+        42510814,
+        42509662
+      ],
+      "CLEulerIntegrator.diluteSpecs": [
+        42510814,
+        42509662
+      ],
+      "CLEulerIntegrator.speciesRates": [
+        42510814,
+        42509662
+      ],
+      "physics.calculate_Bx": [
+        44436763392,
+        44435611936
+      ],
+      "physics.calculate_BTBx": [
+        1388648856,
+        1388612873
+      ],
+      "vecaddkx": [
+        1388648856,
+        1388612873
+      ]
+    }
+  },
+  "two_over_single_elapsed_ratio": 9.506370449987255,
+  "timing_definition": "Sum of logged reporting intervals, excluding setup. One run per configuration; exact historical commits unknown; trajectories differ.",
+  "telemetry_window_definition": "Exclusive cutoff inferred from GPU memory release; beginning is first telemetry sample, not proven simulation start. Device-wide readings, local timezone unknown. Long post-run idle tails excluded.",
+  "telemetry": {
+    "single": {
+      "0": {
+        "samples": 2616,
+        "max_gpu_utilization_percent": 80.0,
+        "max_memory_mib": 1410.0,
+        "mean_gpu_utilization_percent": 3.823394495412844
+      },
+      "1": {
+        "samples": 2616,
+        "max_gpu_utilization_percent": 0,
+        "max_memory_mib": 4.0,
+        "mean_gpu_utilization_percent": 0.0
+      }
+    },
+    "two": {
+      "0": {
+        "samples": 24417,
+        "max_gpu_utilization_percent": 64.0,
+        "max_memory_mib": 1286.0,
+        "mean_gpu_utilization_percent": 6.740918212720645
+      },
+      "1": {
+        "samples": 24416,
+        "max_gpu_utilization_percent": 57.0,
+        "max_memory_mib": 666.0,
+        "mean_gpu_utilization_percent": 4.089367627785059
+      }
+    }
+  }
+}

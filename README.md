@@ -20,6 +20,18 @@ See:
 
 [`brain-tumor-segmentation/`](brain-tumor-segmentation/)
 
+### CellModeller Multi-GPU
+
+A work-in-progress distributed CellModeller experiment on AxonDAO-hosted AxonOS.
+
+- One- and two-GPU headless runs both reached and held 100,000 cells
+- Two-GPU recorded runtime was 9.51× longer; no speedup is claimed
+- Raw logs, telemetry, analysis scripts, figures and provenance limitations included
+- Four-GPU GUI capacity estimate documented separately from achieved results
+
+See:
+[`cellmodeller-multigpu/`](cellmodeller-multigpu/)
+
 ---
 
 Additional AxonOS experiments will be added to this repository.
